@@ -11,6 +11,10 @@ import javax.servlet.http.HttpServletResponse;
 //oi
 @WebServlet(urlPatterns="/oi")
 public class OiMundoServlet extends HttpServlet {
+	
+	public OiMundoServlet() {
+		System.out.println("Criando Oi Mundo Servlet");
+	}
 
 	private static final long serialVersionUID = 1L;
 
