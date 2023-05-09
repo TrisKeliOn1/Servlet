@@ -14,31 +14,32 @@ import br.com.alura.gerenciador.acao.MostraEmpresa;
 import br.com.alura.gerenciador.acao.NovaEmpresa;
 import br.com.alura.gerenciador.acao.RemoveEmpresa;
 
-
 @WebServlet("/entrada")
 public class UnicaEntradaServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String paramAcao = request.getParameter("acao"); 
+    protected void service(HttpServletRequest request, HttpServletResponse response) 
+            throws ServletException, IOException {
 
-        if(paramAcao.equals("ListaEmpresas")) {                        
-            ListaEmpresas acao = new ListaEmpresas();
-            acao.executa(request, response);            
-        } else if(paramAcao.equals("RemoveEmpresa")) {            
-            RemoveEmpresa acao = new RemoveEmpresa();
-            acao.executa(request, response);            
-        } else if(paramAcao.equals("MostraEmpresa")) {            
-            MostraEmpresa acao = new MostraEmpresa();
-            acao.executa(request, response);            
-        } else if(paramAcao.equals("AlterarEmpresa")) {
-        	AlteraEmpresa acao = new AlteraEmpresa();
-        	acao.executa(request, response);
-        } else if(paramAcao.equals("NovaEmpresa")) {
-        	NovaEmpresa acao = new NovaEmpresa();
-        	acao.executa(request, response);
-        }
-	}
+		String paramAcao = request.getParameter("acao");
+		
+		if(paramAcao.equals("ListaEmpresas")) {
+		    ListaEmpresas acao = new ListaEmpresas();
+		    acao.executa(request, response);
+		} else if(paramAcao.equals("RemoveEmpresa")) {
+		    RemoveEmpresa acao = new RemoveEmpresa();
+		    acao.executa(request, response);
+		} else if(paramAcao.equals("MostraEmpresa")) {
+		    MostraEmpresa acao = new MostraEmpresa();
+		    acao.executa(request, response);
+		} else if(paramAcao.equals("AlteraEmpresa")) {
+		    AlteraEmpresa acao = new AlteraEmpresa();
+		    acao.executa(request, response);
+		} else if(paramAcao.equals("NovaEmpresa")) {
+		    NovaEmpresa acao = new NovaEmpresa();
+		    acao.executa(request, response);
+		}
+
+    }
 
 }
